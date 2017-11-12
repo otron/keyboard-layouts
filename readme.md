@@ -6,6 +6,14 @@
 
 # flashing from arch linux?
 
+1. copy over contents of `ergodox_ez` to `qmk_firmware/keyboards/.`:
+    `cp -r ergodox_ez PATH_TO_QMK_FW_REPO/keyboards/.`
+2. run make from qmk\_firmware folder:
+    `make ergodox_ez:LAYOUT`
+3. run `teensy-loader-cli` to flash the firmware onto the keyboard (remember to put the keyboard
+    in reset mode):
+    `teensy-loader-cli -mmcu=atmega32u4 FILE`
+
 # misc notes
 
 use `utils/find_ergodox.sh` to search through connected usb devices for an ergodox
